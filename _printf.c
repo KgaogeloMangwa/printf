@@ -2,35 +2,39 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+void _print_arg(char c, va_list args, int *count);
+
 /**
  * _printf - produces output according to a format
  * @format: character string containing zero or more directives
  * Return: number of characters printed
  * (excluding the null byte used to end output to strings)
  */
+
 int _printf(const char *format, ...)
 {
 	va_list args;
 
+	int count = 0;
+
 	va_start(args, format);
 
-	int count = 0;
 
 	while (*format)
 	{
 
 		if (*format == '%')
-	{
-		format++;
-		_print_arg(*format, args, &count);
-	}
-	else
-	{
-		putchar(*format);
-		count++;
-	}
+		{
+			format++;
+			_print_arg(*format, args, &count);
+		}
+		else
+		{
+			putchar(*format);
+			count++;
+		}
 
-	format++;
+		format++;
 	}
 
 	va_end(args);
@@ -47,25 +51,26 @@ int _printf(const char *format, ...)
  */
 void _print_arg(char c, va_list args, int *count)
 {
+
 	switch (c)
 	{
 	case 'c':
-	}
-	char ch = (char) va_arg(args, int);
+		{
+			char ch = (char) va_arg(args, int);
 
-	putchar(ch);
-	(*count)++;
-	}
-	break;
+			putchar(ch);
+			(*count)++;
+		}
+		break;
 
-	case 's':
-	{
-		char *str = va_arg(args, char *);
+		case 's':
+		{
+			char *str = va_arg(args, char *);
 
-		while (*str)
+			while (*str)
 		{
 			putchar(*str++);
-			(*count)++
+			(*count)++;
 		}
 	}
 	break;
