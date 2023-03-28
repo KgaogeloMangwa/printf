@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * print_R - prints a string with rot13 encryption.
