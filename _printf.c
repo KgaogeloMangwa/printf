@@ -2,13 +2,40 @@
 
 int (*printer_aux(char flag))(va_list);
 
+void _print_arg(char c, va_list args, int *count);
+
 /**
  * _printf - produces output according to a format.
  * @format: format specifier.
  * Return: number of characters printed.
  */
+
 int _printf(const char *format, ...)
 {
+<<<<<<< HEAD
+	va_list args;
+
+	int count = 0;
+
+	va_start(args, format);
+
+
+	while (*format)
+	{
+
+		if (*format == '%')
+		{
+			format++;
+			_print_arg(*format, args, &count);
+		}
+		else
+		{
+			putchar(*format);
+			count++;
+		}
+
+		format++;
+=======
 	va_list arg;
 	int i, printed_chars = 0;
 
@@ -41,6 +68,7 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			printed_chars++;
 		}
+>>>>>>> a4af99d0dc1de17155abebe5d658030d1ae9f103
 	}
 	va_end(arg);
 
@@ -54,6 +82,38 @@ int _printf(const char *format, ...)
  */
 int (*printer_aux(char flag))(va_list)
 {
+<<<<<<< HEAD
+
+	switch (c)
+	{
+	case 'c':
+		{
+			char ch = (char) va_arg(args, int);
+
+			putchar(ch);
+			(*count)++;
+		}
+		break;
+
+		case 's':
+		{
+			char *str = va_arg(args, char *);
+
+			while (*str)
+		{
+			putchar(*str++);
+			(*count)++;
+		}
+	}
+	break;
+	case '%':
+	{
+		putchar('%');
+		(*count)++;
+	}
+	break;
+	}
+=======
 	printer_t arr[] = {
 		{'c', print_c},
 		{'s', print_s},
@@ -75,4 +135,5 @@ int (*printer_aux(char flag))(va_list)
 			break;
 
 	return (arr[i].function);
+>>>>>>> a4af99d0dc1de17155abebe5d658030d1ae9f103
 }
