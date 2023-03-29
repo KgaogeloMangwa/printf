@@ -42,5 +42,6 @@ int out_num(char *, int, int *);
 char *bnten(int, char, unsigned int *);
 void rev_string(char *, int);
 char *rot13(char *, int);
+int print_rev_string(va_list args);
 
 #endif
