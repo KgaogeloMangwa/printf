@@ -1,104 +1,65 @@
-.TH _PRINTF "March/2020" "1.0" "Maximiliano Pan & Rodolfo Delgado" "manpage _printf"
-
-.P
+.\" Manpage for _printf
+.TH _printf (3) "11/06/2021" "1.0" "_printf Programmer's Manual"
 
 .SH NAME
 
-.P
-
-_printf \- function that prints strings, characters, and more.
-
+_printf
 
 .SH SYNOPSIS
 
-.P
-
-#include "holberton.h"
-
-.RS
-	- #include <unistd.h>
-
-	- #include <stdarg.h>
-
-	- #include <stdlib.h>
-
-	- #include <stdio.h>
-
-	- #include <limits.h>
-.RE
+.B #include "main.h"
 .PP
-int
-.B _printf
-(const char *format, ...);
-.PP
-int _putchar(char c);
 
-int print_c(va_list arg);
-
-int print_s(va_list arg);
-
-int print_r(va_list arg);
-
-int print_id(va_list arg);
-
-int print_u(va_list arg);
+.B int _printf(const char *format, ...)
+.B ...)
 
 .SH DESCRIPTION
 
-.P
-
-The intention of
-.B _printf
-is to imitate the function from the library <stdio.h>
-.I printf
-of the C language.
 .PP
-Return value
-In a succesful return, the function will return the number of characters printed (excluding the null byte used to end output to strings).
-If an output error is encountered in the function, a negative value is returned.
+
+Produce output to stdout according to a format described below similar to the printf() function.
 
 .SH OPTIONS
 
-.P
+.RS
+.nf
+- %c -  Prints a single char.
+- %s -  Prints the argument as a string.
+- %% -  Prints a single perecentage sign to the stream.
+- %i / %d - Prints signed decimal integer.
+.RE
 
-Conversion specifiers:
+.SH EXAMPLES
 
-.P
-.IP
-SYNTAX : %[Option]
-
-
-%c: Prints a character argument. Example --> _printf("%c", 'c');
-
-%s: Prints a string argument. Example --> _printf("%s", "Hello World");
-
-%d, %i: Prints a int argument. Example --> _printf("%d", 2021);
-
-%b: The unsigned int argument is converted to binary. Example --> _printf("%b", 1999);
-
-%r: Reverse a string argument. Example --> _printf("%r", "Have a Great Day!");
-
-%R: Apply ROT13 method in the string argument, per each character of the string. Example --> _printf("%R", "Uruguay");
-
-%o, %u, %x, %X; The unsigned int argument will be converted to unsigned octal using "%o", unsigned decimal using "%u" or unsigned hexadecimal using "%x" and "%X".The letters abcdef are used for x conversions; the letters ABCDEF are used for X conversions. Example --> _printf("%o", 1122);
-
+.B With main.c we can test our functions:
 
 .PP
-.SH BUGS
-.P
-
-No bugs found yet.
-
-.SH AUTHOR
-
-.P
-
-Maximiliano Pan GitHub: https://github.com/pxnmatz
-Rodrigo Delgado GitHub: https://github.com/Ro8s
-
+#include "main.h"
 .PP
-
-.SH SEE ALSO
+_printf("Character:[%c]\n", 'H');
 .PP
+Output: character: H
+.PP
+_printf("String:[%s]\n", "I am a string !");
+.PP
+ Output: string: I am s string !
+.PP
+_printf("Percent:[%%]\n");
+.PP
+Output: percent: %
+.PP
+_printf("integer: %i\n", 10);
+.PP
+Output: integer: 10
+.PP
+_printf("decimal: %d\n", 100);
+.PP
+Output: decimal: 100
 
-printf() : https://linux.die.net/man/3/printf
+.B Return value
+
+On success, _printf returns the number of printed characters. If formats is error or NULL returns -1
+
+.SH AUTHORS
+
+Bruno Rodriguez, Oscar Bedat

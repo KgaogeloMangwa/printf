@@ -13,7 +13,7 @@ Project _printf() - Produce output to stdout according to a format described bel
 - Editor: VIM 8.1.2269
 - Compiler: gcc 9.3.0
 - Wall -Werror -Wextra -pedantic -std=gnu89
-- Style guidelines: [Betty style]
+- Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
 ## Project specifitacation
 
@@ -35,7 +35,7 @@ Specifier characters at the end define the type and the interpretation of its co
 
 |**File**|**Description**|
 |--------|---------------|
-|README.md|this file|
+|README
 |\_putchar.c|putchar function|
 |get_function.c|get_function function|
 |main.h|header file|
@@ -48,7 +48,7 @@ Specifier characters at the end define the type and the interpretation of its co
 
 ## Install
 To install execute in terminal
-git clone https://github.com/KgaogeloMangwa/printf.git
+git clone https://github.com/Ouyei/printf
 
 ## Compilation
 
@@ -68,6 +68,6 @@ git clone https://github.com/KgaogeloMangwa/printf.git
 
 # Flowchart
 
-![Flowchart](https://github.com/KgaogeloMangwa/printf/)
+![Flowchart](https://https://github.com/KgaogeloMangwa/printf/)
 
-Created by [Madimakatso Molise](https://github.com/MadimakatsoM) & [KgaogeloMangwa](https://github.com/KgaogeloMangwa/).
+Created by [MadimakatsoM](https://github.com/MadimakatsoM & [KgaogeloMangwa](https://github.com/KgaogeloMangwa).
