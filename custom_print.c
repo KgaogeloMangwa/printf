@@ -1,20 +1,21 @@
 #include "main.h"
+#include "print_str.c"
 
 /**
  * print_none - Non printable characters
  * (0 < ASCII value < 32 or >= 127) are
  * printed this way: \x, followed by the ASCII code
  * value in hexadecimal (upper case - always 2 characters)
- * @l: va_list arguments from _printf
+ * @arg: va_list arguments from _printf
  * @f: pointer to the struct flags that determines
  * if a flag is passed to _printf
  * Return: number of char printed
  */
-int print_none(va_list l, flags_t *f)
+int print_none(va_list arg, flags_t *f)
 {
 	int i, count = 0;
 	char *res;
-	char *s = va_arg(l, char *);
+	char *s = va_arg(arg, char *);
 
 	(void)f;
 	if (!s)
