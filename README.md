@@ -2,7 +2,7 @@
     <img  
     style="text-align:center"  
     src="https://raw.githubusercontent.com/coding-max/hbtn_config/main/assets/hbtn_logo_low.png"  
-    alt="Holberton School"/>  
+    alt="ALX GROUP-PROJECT"/>  
     <h1 align="center"> printf </h1>  
 </div>
 
@@ -67,7 +67,7 @@ The code compile with ``gcc -Wall -Werror -Wextra -pedantic *.c`` command, also 
 
 ## Files
 
-- holberton.h
+- main.h
 - _printf.c
 - _putchar.c
 - print_str.c
@@ -80,4 +80,4 @@ The code compile with ``gcc -Wall -Werror -Wextra -pedantic *.c`` command, also 
 
 ## Authors
 
-Maximiliano Pan & Rodolfo Delgado.
+Prince Mangwa & Madimakatso Molise.
