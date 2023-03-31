@@ -1,9 +1,8 @@
 <div align=center>  
     <img  
-    style="text-align:center"  
-    src="https://raw.githubusercontent.com/coding-max/hbtn_config/main/assets/hbtn_logo_low.png"  
+    style="text-align:center"   
     alt="ALX GROUP-PROJECT"/>  
-    <h1 align="center"> printf </h1>  
+    <h1 align="center"> printf-ALX-groupproject </h1>  
 </div>
 
 ## Description
