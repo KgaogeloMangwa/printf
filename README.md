@@ -1,73 +1,83 @@
-### _printf
+<div align=center>  
+    <img  
+    style="text-align:center"  
+    src="https://raw.githubusercontent.com/coding-max/hbtn_config/main/assets/hbtn_logo_low.png"  
+    alt="Holberton School"/>  
+    <h1 align="center"> printf </h1>  
+</div>
 
-Hello, welcome to our first group project, we're replicating the printf() fucntion from the C Standard Library.
+## Description
 
-### version 1.0
+The **_printf** function emulates functionality of the C standard library function printf, writing output to standard output.  
+The function uses a string *format* where the data to print is indicated, followed by the arguments to be printed (**_printf** use variadic functions to allow a custom number of arguments). 
 
-## Introduction to the project
+Prototype: ``int _printf(const char *format, ...);``
 
-Project _printf() - Produce output to stdout according to a format described below similar to the printf() function.
+Return Value: if the function is executed correctly, it returns the number of characters printed (not counting the null character). If something goes wrong, it returns -1.
 
-## Evironment
-- Language: C
-- Editor: VIM 8.1.2269
-- Compiler: gcc 9.3.0
-- Wall -Werror -Wextra -pedantic -std=gnu89
-- Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
+<br>
 
-## Project specifitacation
+## Use
 
-- No allowed to use global variable
-- No more than 5 functions per file
-- All files end with a new line
+General call of `_printf` function:  
+``_printf("format", var1, var2, ...);``
 
-<h3>Specifiers </h3>
-Specifier characters at the end define the type and the interpretation of its corresponding argument:
+#### Examples:
 
-| Specifier  | Output          |
-|------------|-----------------|
-| `c`        | character       |
-| `s`        | string          |
-| `d` or `i` | Signed integer  |
-| `%`        | %               |
+* String without arguments: ``_printf("Let's try to printf a sentence.");``
+    * Output: *Let's try to printf a sentence.*
+* Basic use with string and char specifier: ``_printf("%s%c", "I am a string", '!');``
+    * Output: *I am a string!*
+* Print some numbers: ``_printf("the square root of %i is %d", 15625, 125);``
+    * Output: *the square root of 15625 is 125*
 
-## Repository files
+In this way you can use and mix different specifiers accepted by the **_printf** function.
 
-|**File**|**Description**|
-|--------|---------------|
-|README
-|\_putchar.c|putchar function|
-|get_function.c|get_function function|
-|main.h|header file|
-|print_char.c|print_char function|
-|print_digit.c|print_digit function|
-|print_string.c|print_string function|
-|printf.c|main function|
-|man_3_printf | man page|
-|printf_flowchart.png | flowchart _printf|
+<br>
 
-## Install
-To install execute in terminal
-git clone https://github.com/Ouyei/printf
+## Specifiers
+
+Specification characters are the main component of the **_putchar** function.
+The char **'%'** is used followed by a character that indicates the type of data to be printed.
+The specification character is placed in the *format* string and the data to be printed is placed as an argument of the function.
+
+| Specifier | Description                                       |
+|-----------|---------------------------------------------------|
+| %c        | Prints a character.                               |
+| %s        | Prints a string.                                  |
+| %r        | Prints a string in reverse.                       |
+| %R        | Prints a string in rot13 encryption.                                          |          |
+| %i or %d  | Prints an int number.                             |
+| %u        | Prints an unsigned int number.                    |
+| %b        | Prints an unsigned int number in binary notation. |
+| %o        | Prints an unsigned int number in octal notation. |
+| %x        | Prints an unsigned int number in hexadecmal notation (lowercase). |
+| %X        | Prints an unsigned int number in hexadecmal notation (uppercase). |
+| %%        | Prints the **'%'** char.                   |
+
+<br>
 
 ## Compilation
 
-``gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c``
+The **_printf** function was coded on an Ubuntu 14.04 LTS machine with gcc version 4.8.4.
 
-## EXAMPLES ##
-- _printf functions examples:
+The code compile with ``gcc -Wall -Werror -Wextra -pedantic *.c`` command, also it's necessary add a main file that calls the function.
 
-- _printf("Character:[%c]\n", 'H');
-  + Output: char: [H]
-- _printf("String:[%s]\n", "I am a string !");
-  + Output: string: [I am a string !]
-- _printf("decimal: [%d]\n", 10000);
-  + Output: decimal: [10000]
-- _printf("Percent: [%%]\n");
-  + Output: Percent: [%%]
+<br>
 
-# Flowchart
+## Files
 
-![Flowchart](https://https://github.com/KgaogeloMangwa/printf/)
+- holberton.h
+- _printf.c
+- _putchar.c
+- print_str.c
+- print_num.c
+- print_hex.c
+- print_rot13.c
+- man_3_printf
+- test/
+    - test_collection
 
-Created by [MadimakatsoM](https://github.com/MadimakatsoM & [KgaogeloMangwa](https://github.com/KgaogeloMangwa).
+## Authors
+
+Maximiliano Pan & Rodolfo Delgado.
