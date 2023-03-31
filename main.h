@@ -30,5 +30,4 @@ int print_X(va_list arg);
 int print_r(va_list arg);
 int print_R(va_list arg);
 
-int print_none(va_list arg, flags_t *f);
 #endif
